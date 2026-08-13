@@ -1,0 +1,324 @@
+
+
+
+GOLF SWING REPLAY
+PROJECT CONTEXT
+==============================
+
+PROJECT GOAL
+------------
+
+Build a simple automatic golf swing replay system for a garage hitting mat.
+
+The system should:
+
+1. Continuously monitor a golfer with a camera.
+2. Maintain a rolling video buffer.
+3. Detect the sound of club/ball impact.
+4. Preserve video from approximately 3 seconds before impact.
+5. Continue recording approximately 1.5-2 seconds after impact.
+6. Automatically replay the swing in slow motion.
+7. Return automatically to a READY state for the next shot.
+8. Require no keyboard/mouse interaction during a practice session.
+
+
+CURRENT HARDWARE
+----------------
+
+Development Computer:
+- Mac laptop
+
+Current Camera:
+- NexiGo N680E USB webcam
+- 1920x1080 capable
+- Currently testing at 1280x720 / 30 FPS
+- Built-in microphone
+
+Display:
+- Mac display during development
+- Eventually external garage monitor
+
+Original Hardware:
+- Raspberry Pi 4 Model B
+- Pi approach was initially tested but development moved to Mac
+  because of an old Raspberry Pi OS installation and dependency issues.
+
+
+CURRENT SOFTWARE
+----------------
+
+Language:
+- Python 3
+
+Development:
+- VS Code
+- GitHub repository
+- Python virtual environment (.venv)
+
+Python Libraries:
+- opencv-python
+- numpy
+- sounddevice
+
+Current application:
+- app.py (modular Version 3 entry point)
+
+
+CURRENT WORKING FEATURES
+------------------------
+
+VERSION 1 HAS BEEN SUCCESSFULLY TESTED.
+
+Working:
+
+- NexiGo camera capture
+- Live video
+- Rolling video buffer
+- Approximately 3 seconds pre-impact capture
+- Manual SPACE BAR trigger
+- Approximately 1.5 seconds post-impact capture
+- MP4 swing recording
+- Automatic slow-motion replay
+- Replay twice
+- Automatic return to READY state
+
+
+CURRENT DEVELOPMENT
+-------------------
+
+Version 2 added:
+
+- NexiGo microphone input
+- Real-time microphone level
+- Automatic impact detection
+- Configurable impact threshold
+- Manual SPACE trigger retained as backup
+- Approximate impact frame marker during replay
+
+Current impact threshold starting point:
+
+IMPACT_THRESHOLD = 0.25
+
+This will need to be calibrated in the actual garage.
+
+Version 3 implements:
+
+- Explicit application states and microphone-trigger gating
+- Modular camera, audio, replay, UI, storage, and application code
+- Full-screen menus and Quick Practice
+- User, club, session, and shot tracking
+- Python dataclasses with local JSON persistence
+- Adjustable replay controls and impact-centered playback
+- Save/discard prompt; videos are written only when selected
+- Saved swing history and session summaries
+
+Deferred:
+
+- Microphone calibration
+- Xbox controller support
+- Interactive settings controls
+- High-speed and dual-camera capture
+- Automatic swing analysis
+
+
+DESIRED USER EXPERIENCE
+-----------------------
+
+Normal operation should eventually be:
+
+READY
+  |
+  v
+Golfer addresses ball
+  |
+  v
+Golfer swings
+  |
+  v
+Club/ball impact detected automatically
+  |
+  v
+Capture ~1.5 seconds after impact
+  |
+  v
+Slow-motion replay
+  |
+  v
+Return to READY
+  |
+  v
+Next shot
+
+No keyboard or mouse should be required.
+
+
+FUTURE IDEAS
+------------
+
+CAMERAS
+
+- Upgrade from 30 FPS NexiGo to 120+ FPS camera.
+- Prefer global shutter if practical.
+- Eventually support two cameras.
+- Camera 1: Down-the-line.
+- Camera 2: Face-on.
+- Synchronize both camera views.
+- Side-by-side replay.
+- Potentially investigate old iPhones as high-speed cameras.
+- 120 FPS or 240 FPS would significantly improve swing analysis.
+
+
+REPLAY
+
+- Adjustable replay speed.
+- 0.25x default.
+- Frame-by-frame playback.
+- Pause at impact.
+- Automatically replay important portion of swing.
+- Replay both camera angles simultaneously.
+- Zoom.
+- Previous swing button.
+- Compare current swing with previous swing.
+
+
+IMPACT DETECTION
+
+Current approach:
+- Simple microphone amplitude threshold.
+
+Future:
+- Detect acoustic signature of golf impact.
+- Reject talking.
+- Reject club drops.
+- Reject background noises.
+- Potential frequency analysis.
+- Automatically calibrate microphone threshold.
+
+
+USER INTERFACE
+
+Eventually build a clean full-screen golf interface.
+
+Potential states:
+
+READY
+RECORDING
+IMPACT DETECTED
+REPLAY
+READY
+
+Potential information displayed:
+
+- Camera status
+- Microphone status
+- Session swing count
+- Replay speed
+- Current camera angle
+- Impact marker
+
+
+SWING ANALYSIS
+
+Long-term possibilities:
+
+- Pose estimation
+- Skeleton overlay
+- Head movement tracking
+- Hip rotation
+- Shoulder rotation
+- Spine angle
+- Knee movement
+- Swing plane lines
+- Setup comparison
+- Impact position comparison
+- Automatic swing phase detection
+
+Possible phases:
+
+Address
+Takeaway
+Top
+Transition
+Downswing
+Impact
+Follow-through
+Finish
+
+
+SESSION MANAGEMENT
+
+Potentially save:
+
+- Date/time
+- Swing number
+- Club
+- Camera angle
+- Video
+- Impact frame
+
+Example:
+
+sessions/
+    2026-08-11/
+        swing_001.mp4
+        swing_002.mp4
+        swing_003.mp4
+
+
+HARDWARE ROADMAP
+----------------
+
+PHASE 1
+Mac + NexiGo
+
+Goal:
+Prove automatic swing replay workflow.
+
+PHASE 2
+Mac + high-speed camera
+
+Goal:
+120+ FPS slow-motion analysis.
+
+PHASE 3
+Mac + two high-speed cameras
+
+Goal:
+Face-on + down-the-line synchronized replay.
+
+PHASE 4
+Advanced swing analysis
+
+Goal:
+Automatic pose/swing analysis and enhanced UI.
+
+
+IMPORTANT DESIGN PRINCIPLE
+--------------------------
+
+Keep the application LOCAL.
+
+The finished golf replay system should not require:
+
+- Internet
+- Cloud services
+- ChatGPT
+- External servers
+
+ChatGPT can assist with development, but the finished application
+should run independently.
+
+
+CURRENT NEXT STEP
+-----------------
+
+Test Version 3 end-to-end with the NexiGo camera and microphone.
+
+Determine:
+
+1. Normal ambient microphone level.
+2. Talking level.
+3. Golf impact level.
+4. Appropriate IMPACT_THRESHOLD.
+
+Then improve automatic impact detection.

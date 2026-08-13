@@ -1,0 +1,10 @@
+NEXT UP
+-------
+
+1. Run an end-to-end camera test with Quick Practice.
+2. Verify manual Space trigger, capture, replay controls, and save/discard.
+3. Verify users, club changes, session summary, and Swing History.
+4. Calibrate microphone threshold when the garage setup is available.
+5. Tackle controller, interactive settings, dual cameras, and analysis later.
+
+

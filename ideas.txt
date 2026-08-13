@@ -1,0 +1,521 @@
+GOLF SWING REPLAY
+IDEAS / FUTURE FEATURES
+-8/11
+==============================
+
+
+MAIN MENU / START SCREEN
+------------------------
+
+Create a simple full-screen startup menu designed to be operated
+from several feet away without a keyboard or mouse.
+
+Potential initial menu:
+
+    GOLF SWING REPLAY
+
+    > START SESSION
+      QUICK PRACTICE
+      SWING HISTORY
+      USERS
+      SETTINGS
+
+START SESSION:
+- Select user.
+- Select club.
+- Start shot counter at zero.
+- Enable automatic swing capture/replay.
+- Track session statistics.
+
+QUICK PRACTICE:
+- Start immediately.
+- No user required.
+- No club required.
+- Automatic swing replay still functions.
+
+SWING HISTORY:
+- Browse previous sessions.
+- Browse previous swings.
+- Filter by user.
+- Filter by club.
+- Replay saved swings.
+
+USERS:
+- Create user.
+- Select existing user.
+- View user history.
+
+SETTINGS:
+- Camera configuration.
+- Replay speed.
+- Impact sensitivity.
+- Replay behavior.
+- Controller configuration.
+
+
+USER PROFILES
+-------------
+
+Allow multiple golfers to use the system.
+
+Before starting a session:
+
+    SELECT GOLFER
+
+    > Matt
+      Golfer 2
+      Golfer 3
+      Guest
+
+Potential user information:
+
+- Name
+- Total swings
+- Total sessions
+- Club usage
+- Saved swings
+- Session history
+
+User history could display:
+
+    MATT
+
+    Total Shots: 1,284
+    Sessions: 34
+
+    DRIVER       312
+    3 WOOD        86
+    5 IRON       144
+    7 IRON       287
+    9 IRON       206
+    PW           173
+    SW            76
+
+
+CLUB SELECTION
+--------------
+
+At the beginning of a session, allow the golfer to select a club.
+
+Example:
+
+    SELECT CLUB
+
+    > DRIVER
+      3 WOOD
+      5 IRON
+      6 IRON
+      7 IRON
+      8 IRON
+      9 IRON
+      PW
+      GW
+      SW
+      OTHER
+
+The selected club stays active until changed.
+
+Allow changing clubs during a session without ending the session.
+
+Example during practice:
+
+    CURRENT CLUB
+
+       7 IRON
+
+    CHANGE CLUB
+
+Club selection should be stored with every recorded shot.
+
+
+SHOT COUNTER
+------------
+
+Automatically increment the shot counter whenever a valid golf
+impact is detected.
+
+Example main practice display:
+
+    MATT
+
+    7 IRON
+
+    SHOT 23
+
+    READY - HIT WHEN READY
+
+
+Track:
+
+- Current session shot count.
+- Shots with current club.
+- Total user shots.
+- Total shots by club.
+
+
+SESSION STATISTICS
+------------------
+
+At the end of a session show something like:
+
+    SESSION COMPLETE
+
+    Matt
+
+    Total Shots: 72
+
+    Driver       15
+    7 Iron       27
+    PW           20
+    SW           10
+
+    Saved Swings: 8
+
+    Session Time: 54 minutes
+
+
+SAVE SWING
+----------
+
+Do not necessarily permanently save every swing.
+
+After replay provide an option:
+
+    SAVE SWING?
+
+    SAVE
+    DISCARD
+
+If no selection is made after a few seconds:
+
+    Automatically return to READY.
+
+Potential alternative:
+
+Automatically maintain recent swings temporarily.
+
+Example:
+
+    LAST 10 SWINGS
+
+The golfer can save a particularly useful swing before it is
+automatically removed.
+
+Saved swing metadata:
+
+- User
+- Date
+- Time
+- Session
+- Shot number
+- Club
+- Camera angle
+- Impact frame
+
+
+SWING HISTORY
+-------------
+
+Allow users to browse previously saved swings.
+
+Potential filters:
+
+- User
+- Date
+- Club
+- Session
+- Camera angle
+
+Example:
+
+    SWING HISTORY
+
+    Matt
+
+    7 IRON
+
+    Aug 11
+        Shot 14
+        Shot 23
+        Shot 31
+
+    Aug 9
+        Shot 7
+        Shot 18
+
+Selecting a swing immediately plays the video.
+
+
+CONTROLLER SUPPORT
+------------------
+
+Investigate using an external game controller instead of requiring
+a keyboard/mouse.
+
+Preferred initial controller:
+
+Xbox Wireless Controller.
+
+Possible controls:
+
+LEFT STICK / D-PAD
+- Navigate menus.
+
+A BUTTON
+- Select.
+
+B BUTTON
+- Back.
+
+X BUTTON
+- Save swing.
+
+Y BUTTON
+- Change club.
+
+LEFT / RIGHT BUMPER
+- Previous / next swing.
+
+LEFT TRIGGER
+- Rewind.
+
+RIGHT TRIGGER
+- Fast forward.
+
+START / MENU
+- Session menu.
+
+Controller should ideally work wirelessly over Bluetooth.
+
+The entire application should eventually be usable from the
+hitting mat without walking over to the computer.
+
+
+DUAL CAMERA SYSTEM
+------------------
+
+Add two cameras.
+
+CAMERA 1:
+Down-the-line.
+
+CAMERA 2:
+Face-on.
+
+Both cameras should continuously buffer video.
+
+One impact event should trigger BOTH cameras.
+
+Desired replay:
+
+    +----------------+----------------+
+    |                |                |
+    |    FACE ON     | DOWN THE LINE  |
+    |                |                |
+    |                |                |
+    +----------------+----------------+
+
+Both videos should:
+
+- Start together.
+- Replay together.
+- Use the same impact reference.
+- Pause together.
+- Advance frame-by-frame together.
+
+
+CAMERA POSITIONING
+------------------
+
+DOWN-THE-LINE CAMERA
+
+Position behind golfer approximately along the hand/target line.
+
+Used for:
+
+- Swing plane.
+- Club path.
+- Posture.
+- Early extension.
+- Backswing position.
+- Downswing position.
+
+
+FACE-ON CAMERA
+
+Position perpendicular to target line facing golfer.
+
+Used for:
+
+- Weight shift.
+- Head movement.
+- Hip movement.
+- Shoulder rotation.
+- Ball position.
+- Impact position.
+- Follow-through.
+
+
+HIGH-SPEED CAMERA ROADMAP
+--------------------------
+
+Current camera:
+
+NexiGo N680E
+30 FPS
+
+Useful for proving the application workflow.
+
+Future cameras should target:
+
+120 FPS minimum.
+
+240 FPS preferred if practical.
+
+Potential future setup:
+
+FACE ON
+120-240 FPS
+
+DOWN THE LINE
+120-240 FPS
+
+MICROPHONE
+Impact detection
+
+MAC
+Processing / storage / UI
+
+MONITOR
+Full-screen interface
+
+
+POTENTIAL PRACTICE SCREEN
+-------------------------
+
+Example:
+
+    +------------------------------------------+
+    | MATT                       SESSION: 01:23 |
+    | 7 IRON                         SHOT: 23  |
+    +------------------------------------------+
+    |                                          |
+    |                                          |
+    |              LIVE CAMERA                 |
+    |                                          |
+    |                                          |
+    +------------------------------------------+
+    |                                          |
+    |          READY - HIT WHEN READY           |
+    |                                          |
+    +------------------------------------------+
+
+
+POTENTIAL REPLAY SCREEN
+-----------------------
+
+    +------------------------------------------+
+    | MATT | 7 IRON | SHOT 23                  |
+    +---------------------+--------------------+
+    |                     |                    |
+    |      FACE ON        |   DOWN THE LINE    |
+    |                     |                    |
+    +---------------------+--------------------+
+    |                                          |
+    |        <    PAUSE    >     0.25x          |
+    |                                          |
+    |          X - SAVE SWING                   |
+    +------------------------------------------+
+
+
+DATA / HISTORY
+--------------
+
+Eventually maintain a lightweight local database.
+
+Potential data model:
+
+USER
+- user_id
+- name
+- created_date
+
+SESSION
+- session_id
+- user_id
+- date
+- start_time
+- end_time
+
+SHOT
+- shot_id
+- session_id
+- user_id
+- club
+- timestamp
+- shot_number
+- saved
+- face_on_video
+- down_line_video
+
+
+FUTURE STATISTICS
+-----------------
+
+Potential user statistics:
+
+- Total shots.
+- Total sessions.
+- Shots by club.
+- Shots per session.
+- Saved swings.
+- Practice frequency.
+- Most-used clubs.
+
+Eventually, if swing analysis is added:
+
+- Swing tempo.
+- Backswing duration.
+- Downswing duration.
+- Head movement.
+- Hip rotation.
+- Shoulder rotation.
+- Setup consistency.
+
+
+OVERALL PRODUCT VISION
+----------------------
+
+The finished system should feel like a dedicated golf training
+appliance rather than a computer application.
+
+Ideal experience:
+
+Turn system on.
+
+Select golfer.
+
+Select club.
+
+Hit balls.
+
+Every shot automatically:
+
+    DETECT
+      ↓
+    CAPTURE
+      ↓
+    REPLAY
+      ↓
+    COUNT
+      ↓
+    STORE METADATA
+      ↓
+    OPTIONAL SAVE
+      ↓
+    READY
+
+The golfer should be able to control everything from the hitting
+mat using an Xbox controller.
+
+No keyboard or mouse should be required during normal operation.

@@ -1,0 +1,21 @@
+{
+  "camera_index": 0,
+  "requested_width": 1280,
+  "requested_height": 720,
+  "requested_fps": 30.0,
+  "pre_impact_seconds": 3.0,
+  "post_impact_seconds": 1.5,
+  "replay_speed": 0.25,
+  "replay_count": 2,
+  "replay_start_before_impact": 2.5,
+  "replay_end_after_impact": 1.25,
+  "auto_pause_at_impact": false,
+  "save_prompt_seconds": 5.0,
+  "impact_threshold": 0.25,
+  "trigger_cooldown_seconds": 4.0,
+  "audio_device": null,
+  "audio_sample_rate": 44100,
+  "audio_block_size": 1024,
+  "fullscreen": true,
+  "window_name": "Golf Swing Replay"
+}

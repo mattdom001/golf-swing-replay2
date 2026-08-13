@@ -1,0 +1,62 @@
+[
+  {
+    "id": "48ba2c81562a4d47b5fa7c6235bf8fb3",
+    "user_id": "a5de10ae936b4313b89bb63c8a2e9634",
+    "user_name": "Matt Dom",
+    "started_at": "2026-08-11T16:06:28-04:00",
+    "ended_at": "2026-08-11T16:08:01-04:00",
+    "shot_count": 2,
+    "saved_count": 0,
+    "shots_by_club": {
+      "9 IRON": 2
+    }
+  },
+  {
+    "id": "b2df6f9574314d21a29a9f51a30ad43c",
+    "user_id": "58a5ee3be5a743d5ad9412650cfdae56",
+    "user_name": "Matt Test User",
+    "started_at": "2026-08-11T16:14:00-04:00",
+    "ended_at": "2026-08-11T16:16:41-04:00",
+    "shot_count": 4,
+    "saved_count": 0,
+    "shots_by_club": {
+      "DRIVER": 4
+    }
+  },
+  {
+    "id": "c89719a05eeb4ec8871111e4dcb305a3",
+    "user_id": "a5de10ae936b4313b89bb63c8a2e9634",
+    "user_name": "Matt Dom",
+    "started_at": "2026-08-11T16:16:52-04:00",
+    "ended_at": "2026-08-11T16:17:45-04:00",
+    "shot_count": 1,
+    "saved_count": 0,
+    "shots_by_club": {
+      "6 IRON": 1
+    }
+  },
+  {
+    "id": "8cbc5bd515524a45a5d63920353cd03c",
+    "user_id": "9ceeb09f9a6a4ebe9fcab9f9d99f47da",
+    "user_name": "Valerie",
+    "started_at": "2026-08-11T17:54:29-04:00",
+    "ended_at": "2026-08-11T17:56:41-04:00",
+    "shot_count": 4,
+    "saved_count": 0,
+    "shots_by_club": {
+      "OTHER": 4
+    }
+  },
+  {
+    "id": "c603bc4246c5458b9575ebf7ea83e072",
+    "user_id": "a51f188423c440d5b882f12855d0f656",
+    "user_name": "Marilyn",
+    "started_at": "2026-08-11T23:45:26-04:00",
+    "ended_at": "2026-08-11T23:46:14-04:00",
+    "shot_count": 1,
+    "saved_count": 0,
+    "shots_by_club": {
+      "7 IRON": 1
+    }
+  }
+]
