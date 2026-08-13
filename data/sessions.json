@@ -58,5 +58,17 @@
     "shots_by_club": {
       "7 IRON": 1
     }
+  },
+  {
+    "id": "e3df3e610fee4421b84b4a5c8367720b",
+    "user_id": "a5de10ae936b4313b89bb63c8a2e9634",
+    "user_name": "Matt Dom",
+    "started_at": "2026-08-12T22:14:14-04:00",
+    "ended_at": "2026-08-12T22:14:46-04:00",
+    "shot_count": 1,
+    "saved_count": 0,
+    "shots_by_club": {
+      "3 WOOD": 1
+    }
   }
 ]
